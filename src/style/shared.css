@@ -1,0 +1,25 @@
+
+.titleName{
+    display: flex !important;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.italicHead {
+    font-size: 18px;
+ }
+ .homeIcon{
+    color: rgb(204, 209, 205);
+ }
+.letteri{
+    color: rgb(252, 4, 4);
+}
+.rights{
+    font-size: 10px;
+}
+.pageFooter{
+    background-color: rgb(235, 235, 232);
+    border-top: 1px solid rgb(179, 173, 173);
+}
+.btn-link{
+    color: rgb(95, 91, 91);
+}
