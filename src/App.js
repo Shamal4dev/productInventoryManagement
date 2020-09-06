@@ -23,13 +23,16 @@ class App extends React.Component {
         <Header />
         <div className="jumbotron mb-0">
           <div className="container">
-            <div className="col-sm-8 col-sm-offset-2">
+            <div >
               {alert.message &&
                 <div className={`alert ${alert.type}`}>{alert.message}</div>
               }
 
               <Switch>
-                <PrivateRoute exact path="/" component={HomePage} />
+                <PrivateRoute exact path="/about" component={HomePage} />
+                <PrivateRoute exact path="/desc" component={HomePage} />
+              
+                <Route exact path="/" component={HomePage}></Route>
                 <Route path="/login" component={LoginPage}></Route>
                 <Route path="/register" component={RegisterPage}></Route>
                 <Route path="/test" component={Test}></Route>

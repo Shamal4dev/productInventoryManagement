@@ -3,38 +3,114 @@ import React from 'react';
 //import { connect } from 'react-redux';
 
 //import { userActions, alertActions } from '../script/redux';
+import {
+    BallBeat, BallClipRotate, BallClipRotateMultiple, BallClipRotatePulse, BallGridBeat, BallGridPulse, BallPulse, BallPulseRise,
+    BallPulseRound,
+    BallPulseSync,
+    BallRotate,
+    BallScale,
+    BallScaleMultiple,
+    BallScaleRandom,
+    BallScaleRipple,
+    BallScaleRippleMultiple,
+    BallSpinFadeLoader,
+    BallSpinLoader,
+    BallTrianglePath,
+    BallZigZag,
+    BallZigZagDeflect,
+    LineScale,
+    LineScaleParty,
+    LineScalePulseOut,
+    LineScalePulseOutRapid, LineScaleRandom,
+    LineSpinFadeLoader,
+    CubeTransition,
+    Pacman,
+    SemiCircleSpin,
+    SquareSpin,
+    TriangleSkewSpin
 
+
+
+} from 'react-pure-loaders';
 
 export class Test extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            count: 0,
+            data: [BallBeat, BallClipRotate, BallClipRotateMultiple, BallClipRotatePulse, BallGridBeat, BallGridPulse, BallPulse, BallPulseRise, BallPulseRound,
+                BallPulseSync,
+                BallRotate,
+                BallScale,
+                BallScaleMultiple,
+                BallScaleRandom,
+                BallScaleRipple,
+                BallScaleRippleMultiple,
+                BallSpinFadeLoader,
+                BallSpinLoader,
+                BallTrianglePath,
+                BallZigZag,
+                BallZigZagDeflect,
+                LineScale,
+                LineScaleParty,
+                LineScalePulseOut,
+                LineScalePulseOutRapid, LineScaleRandom,
+                LineSpinFadeLoader,
+                CubeTransition,
+                Pacman,
+                SemiCircleSpin,
+                SquareSpin,
+                TriangleSkewSpin]
         };
-        this.getuserlist();
+       
     }
 
-    getuserlist() {
-        
-    }
     
-    //	Wrong way
-	/*
-	handleCheckbox() {
-		this.setState({bManager: !this.state.bManager})
-	}
-	*/
-    // Correct way for setting state based on previous state value = Through Arrow function
 
 
     render() {
-        console.log(this.state.data);
+       
+        const TagName =[BallBeat,
+            BallClipRotate,
+            BallClipRotateMultiple,
+            BallClipRotatePulse, 
+            BallGridBeat, 
+            BallGridPulse, 
+            BallPulse, 
+            BallPulseRise, 
+            BallPulseRound,
+            BallPulseSync,
+            BallRotate,
+            BallScale,
+            BallScaleMultiple,
+            BallScaleRandom,
+            BallScaleRipple,
+            BallScaleRippleMultiple,
+            BallSpinFadeLoader,
+            BallSpinLoader,
+            BallTrianglePath,
+            BallZigZag,
+            BallZigZagDeflect,
+            LineScale,
+            LineScaleParty,
+            LineScalePulseOut,
+            LineScalePulseOutRapid, LineScaleRandom,
+            LineSpinFadeLoader,
+            CubeTransition,
+            Pacman,
+            SemiCircleSpin,
+            SquareSpin,
+            TriangleSkewSpin];
+       
         return (
             <div>
-                <h2>data is shown below</h2>
-                <div>
-                    {this.state.data.text}
-                </div>
+                 {TagName.map((Item) =>
+                 <div>
+                    <br / > <br / > {Item.toString() }<br / ><br / >
+                     <Item color={'#4e4f52'} loading={true} />
+                     </div>
+                )}
+               
             </div>
         );
     }

@@ -1,0 +1,160 @@
+.backgroundcolor {
+    background-color: #f5f0f0;
+  }
+hr {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   border: 0;
+   border-top: 1px solid rgba(0, 0, 0, 0.1);
+   width:600px;
+ }
+
+ .searchInput.placeholder{
+    text-align: center;
+ }
+ ::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;  
+}
+
+:-ms-input-placeholder {  
+  text-align: center; 
+}
+ .img-thumbnail{
+    width: 250px;
+    height: 200px;
+ }
+ .card{
+    width: 250px;
+ }
+ .cardProductName{
+    height: 48px;
+    overflow: hidden;
+ }
+ .cardCategory{
+    height: 22px;
+    overflow: hidden;
+ }
+ .cardManufacturer{
+    height: 22px;
+    overflow: hidden;
+ }
+
+ .cardProductDescription{
+    font-size: small;
+    height: 40px;
+    overflow: hidden;
+ }
+
+ .cardLink {
+   color: #4a4a4b;
+   text-decoration: none;
+ }
+ .cardLink:hover{
+  color: rgb(3, 3, 41);
+  text-decoration: none;
+ }
+.detailedProductName{
+  font-size: x-large;
+ font-weight: lighter;
+}
+.verticalLine {
+   border-left: 1px solid rgba(0, 0, 0, 0.1);
+   height: 380px;
+ }
+ .error {
+   border: 1px solid rgb(255, 2, 2);
+ }
+ .invalidinput{
+   font-size: smaller;
+   color:  rgb(255, 2, 2);
+ }
+
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+   border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #444544;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #444544;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(21px);
+  -ms-transform: translateX(21px);
+  transform: translateX(21px);
+}
+.dropdown-menu-custom {
+  width: 205px !important;
+  padding: 10px;
+}
+
+.floatingBtn{
+	position:fixed;
+	width:80px;
+	height:30px;
+	top:200px;
+  left:20px;
+  border: 0px;
+	color:rgb(245, 240, 240);
+	border-radius:50px;
+	text-align:center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1;
+}
+.recharts-surface{
+  overflow: visible;
+}
+.recharts-wrapper {
+  margin: 0 auto;
+}
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
+}
+ 
