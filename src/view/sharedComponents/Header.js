@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../style/shared.css';
 
 export class Header extends Component {
+
     render() {
         return (
             <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between">
@@ -14,19 +15,22 @@ export class Header extends Component {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse form-inline"  id="navbarText">
+                <div className="collapse navbar-collapse form-inline" id="navbarText">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
+                            <a className="nav-link" href="/addProduct">Add Products</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
+                            <a className="nav-link" href="/updateProduct">Edit Product</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/deleteProduct">Delete Product</a>
                         </li>
                     </ul>
-                   
+
                 </div>
             </nav>
         )

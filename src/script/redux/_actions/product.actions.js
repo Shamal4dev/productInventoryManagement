@@ -1,6 +1,7 @@
 import { productConstants } from '../_constants/product.constants';
 import { productService } from '../../services';
 import { alertActions } from './alert.actions';
+import { store } from '../_store/store';
 
 export const productActions = {
     getAll,
@@ -48,12 +49,12 @@ function add(product) {
         productService.add(product)
             .then(
                 product => { 
-                    dispatch(success());
+                    dispatch(success(product));
+                    productService.getAll()
+                    .then(
+                        products => store.dispatch({ type: productConstants.GETALL_SUCCESS, products })
+                    );
                     dispatch(alertActions.success('Product added successfully'));
-                   /*  setTimeout(()=>{
-                        this.history.push('/login');
-                    },2000);
-                     */
                    
                 },
                 error => {
@@ -65,7 +66,7 @@ function add(product) {
 
     function request(product) { return { type: productConstants.ADD_REQUEST, product } }
     function success(product) { return { type: productConstants.ADD_SUCCESS, product } }
-    function failure(error) { return { type: productConstants.ADD_FAILURE, product } }
+    function failure(error) { return { type: productConstants.ADD_FAILURE, error } }
 }
 function update(product) {
     return dispatch => {
@@ -75,6 +76,10 @@ function update(product) {
             .then(
                 product => { 
                     dispatch(success());
+                    productService.getAll()
+                    .then(
+                        products => store.dispatch({ type: productConstants.GETALL_SUCCESS, products })
+                    );
                     dispatch(alertActions.success('Product updated successfully'));
                    /*  setTimeout(()=>{
                         this.history.push('/login');
@@ -91,7 +96,7 @@ function update(product) {
 
     function request(product) { return { type: productConstants.UPDATE_REQUEST, product } }
     function success(product) { return { type: productConstants.UPDATE_SUCCESS, product } }
-    function failure(error) { return { type: productConstants.UPDATE_FAILURE, product } }
+    function failure(error) { return { type: productConstants.UPDATE_FAILURE, error } }
 }
 
 
@@ -103,10 +108,17 @@ function _delete(id) {
         productService.delete(id)
             .then(
                 product => { 
+                    
                     dispatch(success(id));
+                    productService.getAll()
+                    .then(
+                        products => store.dispatch({ type: productConstants.GETALL_SUCCESS, products })
+                    );
+                    dispatch(alertActions.success('Product deleted successfully'));
                 },
                 error => {
                     dispatch(failure(id, error));
+                    dispatch(alertActions.error(error));
                 }
             );
     };

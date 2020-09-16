@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Product from "../productComponents";
 
 
 export class ProductsList extends Component {
@@ -15,7 +14,7 @@ export class ProductsList extends Component {
                     <div className="col-lg-3 p-1">
                         <Link className="cardLink" to={`/product/${item.id}`}>
                             <div className="card border-secondary">
-                                <img className="card-img-top img-thumbnail" src={require(`../../images/${item.filePath}`)} alt={item.filePath} />
+                                { <img className="card-img-top img-thumbnail" src={item.filePath} alt={item.filePath} />}
                                 <div className="card-body">
                                     {this.state.fieldsVisiblity[0].productName && <h5 className="card-title cardProductName">{item.productName}</h5>}
                                     {this.state.fieldsVisiblity[0].category && <p  className="card-text cardCategory">Category: {item.category}</p>}

@@ -1,6 +1,7 @@
 import { userConstants } from '../_constants/user.constants';
 import { userService } from '../../services';
 import { alertActions } from '../_actions/alert.actions';
+import { history } from '../../helper';
 
 export const userActions = {
     login,
@@ -16,13 +17,14 @@ function login(username, password) {
 
         userService.login(username, password)
             .then(
-                user => { 
+                user => {
                     dispatch(success(user));
                     this.history.push('/');
                 },
                 error => {
                     dispatch(failure(error));
                     dispatch(alertActions.error(error));
+
                 }
             );
     };
@@ -43,14 +45,14 @@ function register(user) {
 
         userService.register(user)
             .then(
-                user => { 
+                user => {
                     dispatch(success());
                     dispatch(alertActions.success('Registration successful'));
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         this.history.push('/login');
-                    },2000);
-                    
-                   
+                    }, 2000);
+
+
                 },
                 error => {
                     dispatch(failure(error));
@@ -87,7 +89,7 @@ function _delete(id) {
 
         userService.delete(id)
             .then(
-                user => { 
+                user => {
                     dispatch(success(id));
                 },
                 error => {

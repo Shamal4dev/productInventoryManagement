@@ -4,9 +4,11 @@ import { Header, HomePage, Footer } from './view/sharedComponents';
 import { PrivateRoute } from './view/PrivateRoute';
 import { LoginPage, RegisterPage } from './view/usersComponents';
 import { connect } from 'react-redux';
-import { alertActions } from './script/redux';
+import { alertActions, productActions } from './script/redux';
+import {Product, DeleteProduct, AddProduct, UpdateProduct} from './view/productComponents';
 
-import { Test } from './view/LoginPage copy';
+import { Test } from './view/test';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +17,9 @@ class App extends React.Component {
       // clear alert on location change
       this.props.clearAlerts();
     });
+  }
+  componentDidMount(){
+    this.props.getAllproducts();
   }
   render() {
     const { alert } = this.props;
@@ -30,11 +35,16 @@ class App extends React.Component {
 
               <Switch>
                 <PrivateRoute exact path="/about" component={HomePage} />
-                <PrivateRoute exact path="/desc" component={HomePage} />
-              
+                <PrivateRoute exact path="/product/:id" component={Product} />
+                <PrivateRoute exact path="/DeleteProduct" component={DeleteProduct} />
+                <PrivateRoute exact path="/DeleteProduct/:id" component={DeleteProduct} />
+                <PrivateRoute exact path="/AddProduct" component={AddProduct} />
+                <PrivateRoute exact path="/UpdateProduct" component={UpdateProduct} />
+                <PrivateRoute exact path="/UpdateProduct/:id" component={UpdateProduct} />
+                
                 <Route exact path="/" component={HomePage}></Route>
-                <Route path="/login" component={LoginPage}></Route>
-                <Route path="/register" component={RegisterPage}></Route>
+                <Route exact path="/login" component={LoginPage}></Route>
+                <Route exact path="/register" component={RegisterPage}></Route>
                 <Route path="/test" component={Test}></Route>
                 <Redirect from="*" to="/login" />
               </Switch>
@@ -55,7 +65,8 @@ function mapState(state) {
 }
 
 const actionCreators=  {
-  clearAlerts: alertActions.clear
+  clearAlerts: alertActions.clear,
+  getAllproducts: productActions.getAll
 }
 
 const connectedApp = withRouter(connect(mapState, actionCreators)(App));

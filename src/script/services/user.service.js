@@ -10,6 +10,7 @@ export const userService = {
 let baseUri = "https://shamals-jsonsever.herokuapp.com/";
 //http://localhost:4000/
 function register(user) {
+    console.log(user);
     return axios.get(`${baseUri}users?userName=${user.userName}`)
         .then(res => {
             if (res.data.length === 0) {

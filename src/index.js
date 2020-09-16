@@ -6,7 +6,6 @@ import { store } from './script/redux';
 import { App } from './App';
 import { history } from './script/helper';
 
-
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter history={history}>

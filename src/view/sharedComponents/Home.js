@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { productActions } from '../../script/redux';
 import '../../style/product.css';
 import Pie from '../productComponents/Chart';
 import { ProductsList } from "../productComponents";
@@ -91,12 +90,9 @@ class Home extends React.Component {
             topViewedProducts: sorted.slice(0, number)
         })
     }
-    componentDidMount() {
-        this.props.getAllproducts();
-    }
 
     render() {
-
+       
         const { products } = this.props;
         let electronicsList = [],
             foodList = [],
@@ -114,7 +110,7 @@ class Home extends React.Component {
         }
         return (
             <div><br />
-                 <div ><LineScalePulseOut color={'#4e4f52'} loading={products.loading}/></div>
+                 <div className="container-fluid text-center" ><LineScalePulseOut color={'#4e4f52'} loading={products.loading}/></div>
                 {products.error && <span className="text-danger">Oops...something went wrong. Hint: {products.error}</span>}
                 {products.items && <div className="container-fluid text-center">
                     {/* search starts*/}
@@ -303,9 +299,5 @@ function mapState(state) {
     return { products };
 }
 
-const actionCreators = {
-    getAllproducts: productActions.getAll
-}
-
-const connectedHomePage = connect(mapState, actionCreators)(Home);
+const connectedHomePage = connect(mapState, null)(Home);
 export { connectedHomePage as HomePage };
