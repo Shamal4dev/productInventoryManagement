@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { products } from '../redux/_reducers/product.reducer';
 
 export const productService = {
     getAll,

@@ -47,7 +47,7 @@ class LoginPage extends React.Component {
                 <h2>Login</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group' + (submitted && !userName ? ' has-error' : '')}>
-                        <label htmlFor="userName">User name</label>
+                        <label htmlFor="userName">Email ID/Username</label>
                         <input type="text" className= {submitted && !userName ? "form-control error" :  "form-control"} name="userName" value={userName} onChange={this.handleChange} />
                         {submitted && !userName &&
                             <div className="invalidinput">Username is required</div>

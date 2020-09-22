@@ -69,7 +69,7 @@ class Register extends React.Component {
                         }
                     </div>
                     <div className={'form-group' + (submitted && !user.userName ? ' has-error' : '')}>
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username">Email ID/Username</label>
                         <input type="text" className={submitted && !user.userName ? "form-control error": "form-control"} name="userName" value={user.userName} onChange={this.handleChange} />
                         {submitted && !user.userName &&
                             <div className="invalidinput">Username is required</div>

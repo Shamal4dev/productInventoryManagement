@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 
 class Product extends Component {
 
+    noOfViewsUpdated = false;
+
     updateNoOfViews(item){
-        console.log('before no of views'+item[0]);
-        item = {
-            ...item,
-            noOfViews: parseInt( item[0].noOfViews)+1
-        }
-        console.log('no of views'+item[0]);
-    }    
+        let noOfViews = parseInt(item[0].noOfViews);
+        noOfViews = noOfViews+1;
+        item[0].noOfViews = noOfViews;
+        this.props.updateProduct(item[0]);
+    }
+
     render() {
 
         const { products } = this.props;
@@ -22,16 +23,17 @@ class Product extends Component {
             item = products.items.filter(product => {
                 return product.id == this.props.match.params.id;
             });
-            if(item.length > 0){
-                this.updateNoOfViews(item);
+            if((item.length > 0) && (!this.noOfViewsUpdated)){
+                this.noOfViewsUpdated = true;
+                this.updateNoOfViews(item,false); //passing false to avoid alert while updating the product
             }
         }
 
         return (
 
             <div className="container "><br /><br />
-                {item && item.map((item) =>
-                    <div className="row">
+                {item && item.map((item, key) =>
+                    <div className="row" key={key}>
                         {<div className="col-lg-8">
                             <img className="img-fluid rounded d-block w-100" src={item.filePath} alt={item.filePath} />
                         </div>}
@@ -45,8 +47,8 @@ class Product extends Component {
                             </div>
                             <div>Category: {item.category}</div>
                             <div>Items left: {item.quantity} </div>
-                            <Link to={`/deleteProduct/${item.id}`} ><i class="fa fa-trash" title='Delete the product' aria-hidden="true"></i></Link>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Link to={`/updateProduct/${item.id}`} ><i class="fa fa-pencil" title='Edit the product' aria-hidden="true"></i></Link>
+                            <Link to={`/deleteProduct/${item.id}`} ><i className="fa fa-trash" title='Delete the product' aria-hidden="true"></i></Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <Link to={`/updateProduct/${item.id}`} ><i className="fa fa-pencil" title='Edit the product' aria-hidden="true"></i></Link>
                         </div>
                     </div>
                 )}
@@ -67,7 +69,8 @@ function mapState(state) {
     return { products };
 }
 const actionCreator = {
-    getAllproducts: productActions.getAll
+    getAllproducts: productActions.getAll,
+    updateProduct: productActions.update
 }
 const connectedProductPage = connect(mapState, actionCreator)(Product);
 export { connectedProductPage as Product };

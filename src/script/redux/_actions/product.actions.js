@@ -68,7 +68,7 @@ function add(product) {
     function success(product) { return { type: productConstants.ADD_SUCCESS, product } }
     function failure(error) { return { type: productConstants.ADD_FAILURE, error } }
 }
-function update(product) {
+function update(product, alertRequired = true) {
     return dispatch => {
         dispatch(request(product));
 
@@ -80,12 +80,9 @@ function update(product) {
                     .then(
                         products => store.dispatch({ type: productConstants.GETALL_SUCCESS, products })
                     );
-                    dispatch(alertActions.success('Product updated successfully'));
-                   /*  setTimeout(()=>{
-                        this.history.push('/login');
-                    },2000);
-                     */
-                   
+                    if(!alertRequired){
+                        dispatch(alertActions.success('Product updated successfully'));
+                    }
                 },
                 error => {
                     dispatch(failure(error));

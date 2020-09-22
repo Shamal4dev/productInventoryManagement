@@ -53,7 +53,6 @@ class Home extends React.Component {
         }
         this.setState(prevState);
     }
-
     handleInputChange = () => {
         this.setState({
             query: this.search.value
@@ -237,6 +236,7 @@ class Home extends React.Component {
                         </div>
                     </form>
                     <br />
+                    {/* search results */}
                     {
                         results.length > 0 &&
                         <div className=" justify-content-center">

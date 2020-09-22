@@ -66,8 +66,8 @@ class DeleteProduct extends React.Component {
                                 <h2 >Ooops...item not found Please try with different product Id</h2>
                             </div>
                         }
-                        {item.map((item) => {
-                            return <div className="col-lg-3">
+                        {item.map((item, key) => {
+                            return <div className="col-lg-3" key={key}>
                                 <h3>{item.manufacturer}</h3>
                                 <div className="detailedProductName">{item.productName}</div>
                                 <span><h3><i className="fa fa-rupee blockquote-footer"></i>{"  "}{item.price}</h3></span>

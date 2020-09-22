@@ -1,16 +1,13 @@
 import React from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
-import { Header, HomePage, Footer } from './view/sharedComponents';
+import { Header, HomePage, Footer, About } from './view/sharedComponents';
 import { PrivateRoute } from './view/PrivateRoute';
-import { LoginPage, RegisterPage } from './view/usersComponents';
+import { LoginPage, RegisterPage, UserDetails } from './view/usersComponents';
 import { connect } from 'react-redux';
 import { alertActions, productActions } from './script/redux';
 import {Product, DeleteProduct, AddProduct, UpdateProduct} from './view/productComponents';
 
-import { Test } from './view/test';
-
-
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.props.history.listen((location, action) => {
@@ -29,26 +26,25 @@ class App extends React.Component {
         <div className="jumbotron mb-0">
           <div className="container">
             <div >
-              {alert.message &&
-                <div className={`alert ${alert.type}`}>{alert.message}</div>
-              }
-
               <Switch>
-                <PrivateRoute exact path="/about" component={HomePage} />
                 <PrivateRoute exact path="/product/:id" component={Product} />
-                <PrivateRoute exact path="/DeleteProduct" component={DeleteProduct} />
-                <PrivateRoute exact path="/DeleteProduct/:id" component={DeleteProduct} />
-                <PrivateRoute exact path="/AddProduct" component={AddProduct} />
-                <PrivateRoute exact path="/UpdateProduct" component={UpdateProduct} />
-                <PrivateRoute exact path="/UpdateProduct/:id" component={UpdateProduct} />
+                <PrivateRoute exact path="/deleteProduct" component={DeleteProduct} />
+                <PrivateRoute exact path="/deleteProduct/:id" component={DeleteProduct} />
+                <PrivateRoute exact path="/addProduct" component={AddProduct} />
+                <PrivateRoute exact path="/updateProduct" component={UpdateProduct} />
+                <PrivateRoute exact path="/updateProduct/:id" component={UpdateProduct} />
+                <PrivateRoute exact path="/userDetails" component={UserDetails} />
                 
                 <Route exact path="/" component={HomePage}></Route>
                 <Route exact path="/login" component={LoginPage}></Route>
                 <Route exact path="/register" component={RegisterPage}></Route>
-                <Route path="/test" component={Test}></Route>
+                <Route exact path="/about" component={About} />
                 <Redirect from="*" to="/login" />
               </Switch>
-
+              <br />
+              {alert.message &&
+                <div className={`alert ${alert.type}`}>{alert.message}</div>
+              }
             </div>
           </div>
         </div>
