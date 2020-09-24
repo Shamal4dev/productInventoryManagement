@@ -11,7 +11,7 @@ class Product extends Component {
         let noOfViews = parseInt(item[0].noOfViews);
         noOfViews = noOfViews+1;
         item[0].noOfViews = noOfViews;
-        this.props.updateProduct(item[0]);
+        this.props.updateProduct(item[0],false);
     }
 
     render() {

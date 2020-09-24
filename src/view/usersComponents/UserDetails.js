@@ -5,8 +5,6 @@ class UserDetail extends React.Component {
 
     render() {
         let { loggedIn, user } = this.props;
-
-        console.log('this.props' + JSON.stringify(this.props));
         return (
             <div className="container">
                 <h3>User details:</h3>
@@ -34,8 +32,6 @@ class UserDetail extends React.Component {
                                     <span class="badge badge-dark badge-pill">{value.mobileNo}</span>
                                         </li>
                                     </div>
-
-
                                 })}
 
                             </ul>

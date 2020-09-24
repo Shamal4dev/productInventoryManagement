@@ -5,7 +5,7 @@ import { LineScale } from 'react-pure-loaders';
 
 import { userActions, alertActions } from '../../script/redux';
 
-class LoginPage extends React.Component {
+export default class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         
@@ -41,11 +41,10 @@ class LoginPage extends React.Component {
     render() {
         const { loggingIn } = this.props;
         const { userName, password, submitted } = this.state;
-        console.log('iam in login page');
         return (
             <div className="col-md-6 col-md-offset-3">
                 <h2>Login</h2>
-                <form name="form" onSubmit={this.handleSubmit}>
+                <form id='loginForm' name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group' + (submitted && !userName ? ' has-error' : '')}>
                         <label htmlFor="userName">Email ID/Username</label>
                         <input type="text" className= {submitted && !userName ? "form-control error" :  "form-control"} name="userName" value={userName} onChange={this.handleChange} />

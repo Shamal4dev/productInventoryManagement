@@ -80,7 +80,7 @@ function update(product, alertRequired = true) {
                     .then(
                         products => store.dispatch({ type: productConstants.GETALL_SUCCESS, products })
                     );
-                    if(!alertRequired){
+                    if(alertRequired){
                         dispatch(alertActions.success('Product updated successfully'));
                     }
                 },

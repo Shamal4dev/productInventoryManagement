@@ -15,6 +15,7 @@ class EditPage extends React.Component {
             price: '',
             quantity: '',
             category: '',
+            noOfViews:'',
             filePath: '',
             submitted: false,
             loading: false,
@@ -38,12 +39,13 @@ class EditPage extends React.Component {
         this.setState({ submitted: true });
         if (this.state.productName !== '' && this.state.productDescription !== '' && this.state.manufacturer !== '' && this.state.price !== '' && this.state.quantity !== '' && this.state.category !== '' && this.state.filePath !== '') {
             let product = {
-                id: this.state.productId,
                 productName : this.state.productName,
                 productDescription : this.state.productDescription,
                 manufacturer : this.state.manufacturer,
                 price: this.state.price,
                 quantity: this.state.quantity,
+                noOfViews:this.state.noOfViews,
+                id: this.state.productId,
                 category: this.state.category,
                 filePath: this.state.filePath
             }
@@ -72,6 +74,7 @@ class EditPage extends React.Component {
                         manufacturer: product[0].manufacturer,
                         price: product[0].price,
                         quantity: product[0].quantity,
+                        noOfViews: product[0].noOfViews,
                         category: product[0].category,
                         filePath: product[0].filePath
                     })
