@@ -1,0 +1,675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Root snapshot renders correctly 1`] = `
+<Root>
+  <Provider
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  >
+    <BrowserRouter
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <withRouter(Connect(App))>
+          <Connect(App)
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            match={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+          >
+            <App
+              alert={Object {}}
+              clearAlerts={[Function]}
+              getAllproducts={[Function]}
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "createHref": [Function],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              match={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+            >
+              <div
+                className="h-100"
+              >
+                <Header>
+                  <nav
+                    className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between"
+                  >
+                    <a
+                      className="navbar-brand titleName"
+                      href="/"
+                    >
+                      <p>
+                        <i
+                          className="homeIcon fa fa-shopping-bag"
+                        />
+                         
+                        SHOP 
+                        <i
+                          className="italicHead"
+                        >
+                          CL
+                          <span
+                            className="letteri"
+                          >
+                            i
+                          </span>
+                          Q
+                        </i>
+                      </p>
+                    </a>
+                    <button
+                      aria-controls="navbarText"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                      className="navbar-toggler"
+                      data-target="#navbarText"
+                      data-toggle="collapse"
+                      type="button"
+                    >
+                      <span
+                        className="navbar-toggler-icon"
+                      />
+                    </button>
+                    <div
+                      className="collapse navbar-collapse form-inline"
+                      id="navbarText"
+                    >
+                      <ul
+                        className="navbar-nav mr-auto"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            activeClassName="active"
+                            className="nav-link"
+                            exact={true}
+                            to="/"
+                          >
+                            <Link
+                              aria-current="page"
+                              className="nav-link active"
+                              style={Object {}}
+                              to={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": null,
+                                }
+                              }
+                            >
+                              <LinkAnchor
+                                aria-current="page"
+                                className="nav-link active"
+                                href="/"
+                                navigate={[Function]}
+                                style={Object {}}
+                              >
+                                <a
+                                  aria-current="page"
+                                  className="nav-link active"
+                                  href="/"
+                                  onClick={[Function]}
+                                  style={Object {}}
+                                >
+                                   Home
+                                </a>
+                              </LinkAnchor>
+                            </Link>
+                          </NavLink>
+                        </li>
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            activeClassName="active"
+                            className="nav-link"
+                            to="/addProduct"
+                          >
+                            <Link
+                              aria-current={null}
+                              className="nav-link"
+                              to={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/addProduct",
+                                  "search": "",
+                                  "state": null,
+                                }
+                              }
+                            >
+                              <LinkAnchor
+                                aria-current={null}
+                                className="nav-link"
+                                href="/addProduct"
+                                navigate={[Function]}
+                              >
+                                <a
+                                  aria-current={null}
+                                  className="nav-link"
+                                  href="/addProduct"
+                                  onClick={[Function]}
+                                >
+                                   Add Product
+                                </a>
+                              </LinkAnchor>
+                            </Link>
+                          </NavLink>
+                        </li>
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            activeClassName="active"
+                            className="nav-link"
+                            to="/updateProduct"
+                          >
+                            <Link
+                              aria-current={null}
+                              className="nav-link"
+                              to={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/updateProduct",
+                                  "search": "",
+                                  "state": null,
+                                }
+                              }
+                            >
+                              <LinkAnchor
+                                aria-current={null}
+                                className="nav-link"
+                                href="/updateProduct"
+                                navigate={[Function]}
+                              >
+                                <a
+                                  aria-current={null}
+                                  className="nav-link"
+                                  href="/updateProduct"
+                                  onClick={[Function]}
+                                >
+                                   Edit Product
+                                </a>
+                              </LinkAnchor>
+                            </Link>
+                          </NavLink>
+                        </li>
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            activeClassName="active"
+                            className="nav-link"
+                            to="/deleteProduct"
+                          >
+                            <Link
+                              aria-current={null}
+                              className="nav-link"
+                              to={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/deleteProduct",
+                                  "search": "",
+                                  "state": null,
+                                }
+                              }
+                            >
+                              <LinkAnchor
+                                aria-current={null}
+                                className="nav-link"
+                                href="/deleteProduct"
+                                navigate={[Function]}
+                              >
+                                <a
+                                  aria-current={null}
+                                  className="nav-link"
+                                  href="/deleteProduct"
+                                  onClick={[Function]}
+                                >
+                                   Delete Product
+                                </a>
+                              </LinkAnchor>
+                            </Link>
+                          </NavLink>
+                        </li>
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            activeClassName="active"
+                            className="nav-link"
+                            to="/about"
+                          >
+                            <Link
+                              aria-current={null}
+                              className="nav-link"
+                              to={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/about",
+                                  "search": "",
+                                  "state": null,
+                                }
+                              }
+                            >
+                              <LinkAnchor
+                                aria-current={null}
+                                className="nav-link"
+                                href="/about"
+                                navigate={[Function]}
+                              >
+                                <a
+                                  aria-current={null}
+                                  className="nav-link"
+                                  href="/about"
+                                  onClick={[Function]}
+                                >
+                                   About Us
+                                </a>
+                              </LinkAnchor>
+                            </Link>
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <Connect(LoginIcon)>
+                        <LoginIcon
+                          logout={[Function]}
+                        >
+                          <div>
+                            <div>
+                              <Link
+                                to="/login"
+                              >
+                                <LinkAnchor
+                                  href="/login"
+                                  navigate={[Function]}
+                                >
+                                  <a
+                                    href="/login"
+                                    onClick={[Function]}
+                                  >
+                                    <button
+                                      className="btn btn-light"
+                                      type="button"
+                                    >
+                                      Log In
+                                    </button>
+                                  </a>
+                                </LinkAnchor>
+                              </Link>
+                            </div>
+                          </div>
+                        </LoginIcon>
+                      </Connect(LoginIcon)>
+                    </div>
+                  </nav>
+                </Header>
+                <div
+                  className="jumbotron mb-0"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div>
+                      <Switch>
+                        <Route
+                          component={
+                            Object {
+                              "$$typeof": Symbol(react.memo),
+                              "WrappedComponent": [Function],
+                              "compare": null,
+                              "displayName": "Connect(Home)",
+                              "type": [Function],
+                            }
+                          }
+                          computedMatch={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                          exact={true}
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          path="/"
+                        >
+                          <Connect(Home)
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "createHref": [Function],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <Home
+                              dispatch={[Function]}
+                              history={
+                                Object {
+                                  "action": "POP",
+                                  "block": [Function],
+                                  "createHref": [Function],
+                                  "go": [Function],
+                                  "goBack": [Function],
+                                  "goForward": [Function],
+                                  "length": 1,
+                                  "listen": [Function],
+                                  "location": Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                  "push": [Function],
+                                  "replace": [Function],
+                                }
+                              }
+                              location={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                }
+                              }
+                              match={
+                                Object {
+                                  "isExact": true,
+                                  "params": Object {},
+                                  "path": "/",
+                                  "url": "/",
+                                }
+                              }
+                              products={
+                                Object {
+                                  "loading": true,
+                                }
+                              }
+                            >
+                              <div>
+                                <br />
+                                <div
+                                  className="container-fluid text-center"
+                                >
+                                  <LineScalePulseOut
+                                    color="#4e4f52"
+                                    loading={true}
+                                  >
+                                    <EmotionCssPropInternal
+                                      __EMOTION_LABEL_PLEASE_DO_NOT_USE__="LineScalePulseOut"
+                                      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+                                      css={
+                                        Object {
+                                          " > div": Object {
+                                            "&:nth-of-type(1), &:nth-of-type(5)": Object {
+                                              "animationDelay": "-0.20s !important",
+                                            },
+                                            "&:nth-of-type(2), &:nth-of-type(4)": Object {
+                                              "animationDelay": "-0.40s !important",
+                                            },
+                                            "animation": "_EMO_animation-5jjd7p_@keyframes animation-5jjd7p{0%{transform:scaley(1.0);}100%{transform:scaley(1.0);}50%{transform:scaley(0.4);}}_EMO_ 0.9s -0.60s infinite cubic-bezier(.85,.25,.37,.85)",
+                                            "animationFillMode": "both",
+                                            "backgroundColor": "#4e4f52",
+                                            "borderRadius": "2px",
+                                            "display": "inline-block",
+                                            "height": "35px",
+                                            "margin": "2px",
+                                            "width": "4px",
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <div
+                                        className="css-gsznmz-LineScalePulseOut"
+                                      >
+                                        <div />
+                                        <div />
+                                        <div />
+                                        <div />
+                                        <div />
+                                      </div>
+                                    </EmotionCssPropInternal>
+                                  </LineScalePulseOut>
+                                </div>
+                              </div>
+                            </Home>
+                          </Connect(Home)>
+                        </Route>
+                      </Switch>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+                <Footer>
+                  <footer
+                    className="pageFooter"
+                  >
+                    <nav
+                      className="navbar text-center"
+                    >
+                      <div
+                        className="col-sm"
+                      >
+                        <p
+                          className="rights"
+                        >
+                          All Rights Reserved Designed by Shop 
+                          <i>
+                            CL
+                            <span
+                              className="letteri"
+                            >
+                              i
+                            </span>
+                            Q
+                          </i>
+                           
+                          <br />
+                          Designed by BootstrapMade 
+                        </p>
+                      </div>
+                      <div
+                        className="col-sm"
+                      >
+                        <span>
+                            Download App  
+                          <i
+                            className="fa fa-android"
+                          >
+                             
+                          </i>
+                             
+                          <i
+                            className="fa fa-apple"
+                          />
+                        </span>
+                      </div>
+                      <div
+                        className="col-sm"
+                      >
+                        <span
+                          className="fa fa-facebook float "
+                        >
+                                
+                        </span>
+                        <span
+                          className="fa fa-twitter float "
+                        >
+                               
+                        </span>
+                        <span
+                          className="fa fa-linkedin float "
+                        >
+                               
+                        </span>
+                        <span
+                          className="fa fa-pinterest-p float "
+                        >
+                               
+                        </span>
+                        <span
+                          className="fa fa-google-plus float "
+                        />
+                      </div>
+                    </nav>
+                  </footer>
+                </Footer>
+              </div>
+            </App>
+          </Connect(App)>
+        </withRouter(Connect(App))>
+      </Router>
+    </BrowserRouter>
+  </Provider>
+</Root>
+`;

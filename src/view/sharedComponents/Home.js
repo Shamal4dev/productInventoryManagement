@@ -5,7 +5,7 @@ import Pie from '../productComponents/Chart';
 import { ProductsList } from "../productComponents";
 import { LineScalePulseOut } from 'react-pure-loaders';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -119,7 +119,7 @@ class Home extends React.Component {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text" id="inputGroup-sizing-sm">Search</span>
                                 </div>
-                                <input type="text" placeholder="What are you looking for..." className="form-control searchInput" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ref={input => this.search = input} onChange={this.handleInputChange} />
+                                <input id="searchInput" type="text" placeholder="What are you looking for..." className="form-control searchInput" aria-label="Small" aria-describedby="inputGroup-sizing-sm" ref={input => this.search = input} onChange={this.handleInputChange} />
                             </div>
                             {/* customization starts here */}
 

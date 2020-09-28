@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Route from './Route';
+import Root from './Root';
 
-describe('Route snapshot', () => {
-    let wrapper = mount(<Route />);
+describe('Root snapshot', () => {
+    let wrapper = mount(<Root />);
 
     test('renders correctly', () => {
         expect(wrapper).toMatchSnapshot();

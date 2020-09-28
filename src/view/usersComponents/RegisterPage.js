@@ -5,7 +5,7 @@ import { LineScale } from 'react-pure-loaders';
 
 import { userActions } from '../../script/redux';
 
-class Register extends React.Component {
+export default class Register extends React.Component {
     constructor(props) {
         super(props);
 
@@ -41,9 +41,9 @@ class Register extends React.Component {
 
         this.setState({ submitted: true });
         const { user } = this.state;
-        if (user.firstName && user.lastName && user.userName && user.password && (user.mobileNo.length > 8) && user.location) {
-            let result = this.props.register(user);
-            console.log('result' + result);
+        if (user.firstName && user.lastName && user.userName && user.password && (user.mobileNo.toString().length > 8) && user.location) {
+            
+            this.props.register(user);
         }
     }
 
@@ -85,7 +85,7 @@ class Register extends React.Component {
                     <div className={'form-group' + (submitted && !user.mobileNo ? ' has-error' : '')}>
                         <label htmlFor="mobileNo">Mobile No</label>
                         <input type="number" className={submitted && (!user.mobileNo || user.mobileNo.length < 9 )? "form-control error": "form-control"} name="mobileNo" value={user.mobileNo} onChange={this.handleChange} />
-                        {submitted && (!user.mobileNo || user.mobileNo.length < 9) &&
+                        {submitted && (!user.mobileNo || user.mobileNo.toString().length < 9) &&
                             <div className="invalidinput">Mobile number is required with 9 digits</div>
                         }
                     </div>

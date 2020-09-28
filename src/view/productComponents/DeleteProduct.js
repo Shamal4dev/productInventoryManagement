@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { productActions } from '../../script/redux';
 import { BallClipRotate } from 'react-pure-loaders';
 
-class DeleteProduct extends React.Component {
+export default class DeleteProduct extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -79,7 +79,7 @@ class DeleteProduct extends React.Component {
                                 <div>Items left: {item.quantity} </div>
 
                                 <div className="col-md-8 pb-3"><br />
-                                    <button type="submit" onClick={this.handleSubmit} className="float-sm-right btn btn-dark">Delete</button>
+                                    <button id="delete_Btn" type="submit" onClick={this.handleSubmit} className="float-sm-right btn btn-dark">Delete</button>
                                     <BallClipRotate color={'#4e4f52'} loading={products.deleting} />
                                 </div>
 

@@ -5,7 +5,7 @@ import { store } from './script/redux';
 import { App } from './App';
 import { history } from './script/helper';
 
-function Route() {
+function Root() {
   return (
       <Provider store={store}>
         <BrowserRouter history={history}>
@@ -15,4 +15,4 @@ function Route() {
   );
 }
 
-export default Route;
+export default Root;

@@ -23,7 +23,7 @@ export class Header extends Component {
                             <NavLink exact to="/" className="nav-link" activeClassName="active"> Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/addProduct" className="nav-link" activeClassName="active"> Add Products</NavLink>
+                            <NavLink to="/addProduct" className="nav-link" activeClassName="active"> Add Product</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/updateProduct" className="nav-link" activeClassName="active"> Edit Product</NavLink>

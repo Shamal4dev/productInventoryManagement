@@ -5,7 +5,7 @@ import { BallClipRotate, LineScale } from 'react-pure-loaders';
 import { productService } from '../../script/services';
 
 
-class EditPage extends React.Component {
+export default class EditPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

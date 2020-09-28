@@ -11,7 +11,7 @@ class Product extends Component {
         let noOfViews = parseInt(item[0].noOfViews);
         noOfViews = noOfViews+1;
         item[0].noOfViews = noOfViews;
-        this.props.updateProduct(item[0],false);
+        this.props.updateProduct(item[0],false);//passing false to avoid alert while updating the product
     }
 
     render() {
@@ -25,7 +25,7 @@ class Product extends Component {
             });
             if((item.length > 0) && (!this.noOfViewsUpdated)){
                 this.noOfViewsUpdated = true;
-                this.updateNoOfViews(item,false); //passing false to avoid alert while updating the product
+                this.updateNoOfViews(item);
             }
         }
 

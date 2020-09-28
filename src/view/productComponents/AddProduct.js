@@ -5,7 +5,7 @@ import { LineScale } from 'react-pure-loaders';
 import { Prompt } from 'react-router-dom';
 import { productService } from '../../script/services';
 
-class AddPage extends React.Component {
+export default class AddPage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,6 +16,7 @@ class AddPage extends React.Component {
                 manufacturer: '',
                 price: '',
                 quantity: '',
+                noOfViews: 0,
                 category: '',
                 filePath: ''
             },
@@ -27,22 +28,8 @@ class AddPage extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        /*   this.beforeunload = this.beforeunload.bind(this); */
     }
-    /*     componentDidMount() {
-            window.addEventListener('beforeunload', this.beforeunload);
-          }
-        
-          componentWillUnmount() {
-            window.removeEventListener('beforeunload', this.beforeunload);
-          }
-        
-          beforeunload(e) {
-            if (this.state.editted) {
-              e.preventDefault();
-              e.returnValue = true;
-            }
-          } */
+   
     handleChange(event) {
         let { name, value } = event.target;
 
@@ -69,6 +56,7 @@ class AddPage extends React.Component {
 
         this.setState({ submitted: true });
         const { product, selectedFile } = this.state;
+
         if (product.productName && product.productDescription && product.manufacturer && product.price && product.quantity && product.category && product.filePath && selectedFile) {
             this.setState({
                 uploading: true
